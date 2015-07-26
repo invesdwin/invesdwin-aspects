@@ -20,7 +20,7 @@ Dependency declaration:
 
 ## Aspects
 
-You can have a look at the included test cases for samples on how to use these aspects more specifically. Otherwise here some summaries about them.
+You can have a look at the included test cases for samples on how to use these aspects more specifically. Otherwise here are summaries about them.
 
 #### `PropertyChangeSupportedAspect`
 This aspect handles the `PropertyChangeSupport` for all setters in classes extending `AValueObject` or `APropertyChangeSupported` from the [invesdwin-util](https://github.com/subes/invesdwin-util) project, so you do not have to implement `firePropertyChange(...)` yourself everywhere.
