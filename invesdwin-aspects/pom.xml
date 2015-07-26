@@ -21,6 +21,7 @@
 		<version.invesdwin-instrument>1.0.0-SNAPSHOT</version.invesdwin-instrument>
 		<version.spring>4.1.6.RELEASE</version.spring>
 		<version.jamon>2.81</version.jamon>
+		<version.aspectj>1.8.5</version.aspectj>
 
 		<version.junit>4.12</version.junit>
 		<version.mockito>1.9.5</version.mockito>
@@ -60,6 +61,11 @@
 					<groupId>com.hazelcast</groupId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${version.aspectj}</version>
 		</dependency>
 
 		<dependency>
