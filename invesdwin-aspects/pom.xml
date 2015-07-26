@@ -20,7 +20,7 @@
 		<version.invesdwin-util>1.0.0-SNAPSHOT</version.invesdwin-util>
 		<version.invesdwin-instrument>1.0.0-SNAPSHOT</version.invesdwin-instrument>
 		<version.spring>4.1.6.RELEASE</version.spring>
-		<version.aspectj>1.8.5</version.aspectj>
+		<version.jamon>2.0</version.jamon>
 
 		<version.junit>4.12</version.junit>
 		<version.mockito>1.9.5</version.mockito>
@@ -43,9 +43,19 @@
 			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${version.aspectj}</version>
+			<groupId>com.jamonapi</groupId>
+			<artifactId>jamon</artifactId>
+			<version>${version.jamon}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>oro</artifactId>
+					<groupId>oro</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>

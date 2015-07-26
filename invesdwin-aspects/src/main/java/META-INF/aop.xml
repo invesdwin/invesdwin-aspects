@@ -4,8 +4,9 @@
 <aspectj>
 	<aspects>
 		<aspect name="de.invesdwin.aspects.internal.PropertyChangeSupportedAspect" />
-		<aspect name="de.invesdwin.aspects.internal.AssertNoSynchronizedScheduledAspect" />
+		<aspect	name="de.invesdwin.aspects.internal.AssertNoSynchronizedScheduledAspect" />
 		<aspect name="de.invesdwin.aspects.internal.SkipParallelExecutionAspect" />
 		<aspect name="de.invesdwin.aspects.internal.EventDispatchThreadAspect" />
+		<aspect name="de.invesdwin.aspects.internal.MonitoredAspect" />
 	</aspects>
 </aspectj>
