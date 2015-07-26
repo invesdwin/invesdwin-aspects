@@ -35,7 +35,8 @@ This aspect will skip any parallel executions of methods that are annotated with
 This aspect handles the `@EventDispatchThread` which allows you to wrap any swing UI method to be run inside the event dispatch thread (EDT). Possible `InvocationTypes` are:
 * `INVOKE_AND_WAIT`: if running in EDT, call directly, otherwise run in EDT and wait for it to finish.
 * `INVOKE_LATER`: schedule the task to be run later by the EDT, returning before it actually happens.
-* `INVOKE_LATER_IF_NOT_IN_EDT`: if running in EDT, call directly, otherwise schedule the tasks to be run later by the RDT, returning before it actually happens.
+* `INVOKE_LATER_IF_NOT_IN_EDT`: if running in EDT, call directly, otherwise schedule the tasks to be run later by the EDT, returning before it actually happens.
+
 For all other cases where you want to wrap only parts of methods, you can use the included `EventDispatchThreadUtil` directly. This annotation and util helps not to get exceptions about code already running in EDT. Also it makes code that should run in EDT much cleaner since you spare yourself lots of boiler plate code. 
 
 #### `MonitoredAspect`
