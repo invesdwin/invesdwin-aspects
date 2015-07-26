@@ -1,0 +1,11 @@
+<!DOCTYPE aspectj PUBLIC    
+  "-//AspectJ//DTD//EN"    "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+
+<aspectj>
+	<aspects>
+		<aspect name="de.invesdwin.aspects.internal.PropertyChangeSupportedAspect" />
+		<aspect name="de.invesdwin.aspects.internal.AssertNoSynchronizedScheduledAspect" />
+		<aspect name="de.invesdwin.aspects.internal.SkipParallelExecutionAspect" />
+		<aspect name="de.invesdwin.aspects.internal.EventDispatchThreadAspect" />
+	</aspects>
+</aspectj>
