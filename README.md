@@ -40,4 +40,4 @@ This aspect handles the `@EventDispatchThread` which allows you to wrap any swin
 For all other cases where you want to wrap only parts of methods, you can use the included `EventDispatchThreadUtil` directly. This annotation and util helps not to get exceptions about code already running in EDT. Also it makes code that should run in EDT much cleaner since you spare yourself lots of boiler plate code. 
 
 #### `MonitoredAspect`
-This aspect provides support for a `@Monitored` to do lightweight specific performance measurements in your code using the popular [JAMon](http://jamonapi.sourceforge.net/) library.
+This aspect provides support for a `@Monitored` to do lightweight specific performance measurements in your code using the popular [JAMon](http://jamonapi.sourceforge.net/) library. You could even do service level aggreement (SLA) monitoring with this in a lightweight and non code-intrusive fashion.
