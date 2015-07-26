@@ -12,7 +12,8 @@ public final class InstrumentationTestInitializer {
     static {
         //initialize load time weaving
         DynamicInstrumentationLoader.waitForInitialized();
-        DynamicInstrumentationLoader.initLoadTimeWeavingContext();
+        org.assertj.core.api.Assertions.assertThat(DynamicInstrumentationLoader.initLoadTimeWeavingContext())
+                .isNotNull();
     }
 
     private InstrumentationTestInitializer() {}
