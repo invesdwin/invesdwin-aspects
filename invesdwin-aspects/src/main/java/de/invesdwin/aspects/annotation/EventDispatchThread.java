@@ -20,7 +20,7 @@ import java.lang.annotation.Target;
 public @interface EventDispatchThread {
     InvocationType value();
 
-    public enum InvocationType {
+    enum InvocationType {
         INVOKE_AND_WAIT,
         INVOKE_LATER,
         INVOKE_LATER_IF_NOT_IN_EDT;
