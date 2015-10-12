@@ -116,7 +116,7 @@ public class EventDispatchThreadAspect {
 
         private final ProceedingJoinPoint pjp;
 
-        public ProceedingJoinPointRunnable(final ProceedingJoinPoint pjp) {
+        ProceedingJoinPointRunnable(final ProceedingJoinPoint pjp) {
             this.pjp = pjp;
         }
 
@@ -135,7 +135,7 @@ public class EventDispatchThreadAspect {
 
         private final ProceedingJoinPoint pjp;
 
-        public ProceedingJoinPointCallable(final ProceedingJoinPoint pjp) {
+        ProceedingJoinPointCallable(final ProceedingJoinPoint pjp) {
             this.pjp = pjp;
         }
 
