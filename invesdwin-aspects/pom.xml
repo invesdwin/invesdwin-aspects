@@ -16,32 +16,36 @@
 		<version.maven-source-plugin>2.2.1</version.maven-source-plugin>
 		<version.maven-processor-plugin>2.2.4</version.maven-processor-plugin>
 		<version.invesdwin-maven-plugin>1.0.0-SNAPSHOT</version.invesdwin-maven-plugin>
-
-		<version.invesdwin-util>1.0.0-SNAPSHOT</version.invesdwin-util>
-		<version.invesdwin-instrument>1.0.0-SNAPSHOT</version.invesdwin-instrument>
-		<version.spring>4.1.6.RELEASE</version.spring>
+		
 		<version.jamon>2.81</version.jamon>
-		<version.aspectj>1.8.5</version.aspectj>
-
-		<version.junit>4.12</version.junit>
-		<version.mockito>1.9.5</version.mockito>
+		
+		<version.invesdwin-bom>1.0.0-SNAPSHOT</version.invesdwin-bom>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de.invesdwin</groupId>
+				<artifactId>invesdwin-bom</artifactId>
+				<version>${version.invesdwin-bom}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
 			<groupId>de.invesdwin</groupId>
 			<artifactId>invesdwin-util</artifactId>
-			<version>${version.invesdwin-util}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jamonapi</groupId>
@@ -65,25 +69,21 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>${version.aspectj}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${version.junit}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
-			<version>${version.mockito}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>de.invesdwin</groupId>
 			<artifactId>invesdwin-instrument</artifactId>
-			<version>${version.invesdwin-instrument}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
