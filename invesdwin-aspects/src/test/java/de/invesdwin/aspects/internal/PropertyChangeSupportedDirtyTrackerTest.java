@@ -15,6 +15,10 @@ import de.invesdwin.util.bean.IDirtyTrackerListener;
 @NotThreadSafe
 public class PropertyChangeSupportedDirtyTrackerTest {
 
+    static {
+        Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
+    }
+
     @Test
     public void testIsTrackingChangesDirectlyCascade() {
         final OuterVo outer = newOuterVo();
@@ -189,10 +193,10 @@ public class PropertyChangeSupportedDirtyTrackerTest {
                 countPropertyChangeEvents++;
                 try {
                     Assertions.assertThat(expectedPropertyChangeEventsOnSecondLevel.remove(evt.getPropertyName()))
-                    .isTrue();
+                            .isTrue();
                 } catch (final Throwable t) {
-                    throw new RuntimeException(
-                            countPropertyChangeEvents + ". propertyChange: " + evt.getPropertyName(), t);
+                    throw new RuntimeException(countPropertyChangeEvents + ". propertyChange: " + evt.getPropertyName(),
+                            t);
                 }
             }
 
