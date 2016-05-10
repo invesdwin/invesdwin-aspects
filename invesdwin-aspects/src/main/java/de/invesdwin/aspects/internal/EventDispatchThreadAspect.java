@@ -58,7 +58,7 @@ public class EventDispatchThreadAspect {
     @SuppressWarnings("unchecked")
     private Object handleFuture(final ProceedingJoinPoint pjp, final InvocationType invocationType) throws Exception {
         final ProceedingJoinPointCallable callable = new ProceedingJoinPointCallable(pjp);
-        Future<Object> f;
+        final Future<Object> f;
         switch (invocationType) {
         case INVOKE_AND_WAIT:
             f = (Future<Object>) EventDispatchThreadUtil.invokeAndWait(callable);
