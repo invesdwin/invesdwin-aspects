@@ -6,7 +6,7 @@ These are a few aspects that make development easier.
 
 Releases and snapshots are deployed to this maven repository:
 ```
-http://invesdwin.de/artifactory/invesdwin-oss
+http://invesdwin.de/artifactory/invesdwin-oss-remote
 ```
 
 Dependency declaration:
