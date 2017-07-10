@@ -41,3 +41,7 @@ For all other cases where you want to wrap only parts of methods, you can use th
 
 #### `MonitoredAspect`
 This aspect provides support for a `@Monitored` annotation to do lightweight specific performance measurements in your code using the popular [JAMon](http://jamonapi.sourceforge.net/) library. You could even do service level agreement (SLA) monitoring with this in a lightweight and non code-intrusive fashion. Or just use it for your tests to gather some additional information about your code executions where needed.
+
+## Support
+
+If you need further assistance or have some ideas for improvements and don't want to create an issue here on github, feel free to ask a question in our [invesdwin-platform googlegroup](https://groups.google.com/forum/#!forum/invesdwin-platform).
