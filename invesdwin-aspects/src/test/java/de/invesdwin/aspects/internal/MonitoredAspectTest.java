@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.concurrent.ThreadSafe;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.jamonapi.MonitorFactory;
 
