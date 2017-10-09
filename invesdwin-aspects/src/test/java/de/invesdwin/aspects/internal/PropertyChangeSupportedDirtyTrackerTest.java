@@ -7,11 +7,14 @@ import java.util.List;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
 import de.invesdwin.util.assertions.Assertions;
 import de.invesdwin.util.bean.AValueObject;
 import de.invesdwin.util.bean.IDirtyTrackerListener;
 
+@RunWith(JUnitPlatform.class)
 @NotThreadSafe
 public class PropertyChangeSupportedDirtyTrackerTest {
 

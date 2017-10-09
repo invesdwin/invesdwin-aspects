@@ -4,11 +4,14 @@ import javax.annotation.concurrent.ThreadSafe;
 
 import org.assertj.core.api.Fail;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import de.invesdwin.aspects.annotation.SkipParallelExecution;
 import de.invesdwin.util.assertions.Assertions;
 
+@RunWith(JUnitPlatform.class)
 @ThreadSafe
 public class AssertNoSynchronizedScheduledAspectTest {
 
