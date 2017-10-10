@@ -4,16 +4,13 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.concurrent.ThreadSafe;
 
-import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
+import org.junit.Test;
 
 import com.jamonapi.MonitorFactory;
 
 import de.invesdwin.aspects.annotation.Monitored;
 import de.invesdwin.util.assertions.Assertions;
 
-@RunWith(JUnitPlatform.class)
 @ThreadSafe
 public class MonitoredAspectTest {
 

@@ -6,16 +6,13 @@ import java.beans.PropertyChangeListener;
 import javax.annotation.concurrent.ThreadSafe;
 
 import org.apache.commons.lang3.mutable.MutableInt;
-import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
+import org.junit.Test;
 import org.mockito.Mockito;
 
 import de.invesdwin.util.assertions.Assertions;
 import de.invesdwin.util.bean.AValueObject;
 import de.invesdwin.util.lang.Strings;
 
-@RunWith(JUnitPlatform.class)
 @ThreadSafe
 public class PropertyChangeSupportedAspectTest {
 
