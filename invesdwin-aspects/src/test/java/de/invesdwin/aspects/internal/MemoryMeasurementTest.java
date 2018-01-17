@@ -1,0 +1,55 @@
+package de.invesdwin.aspects.internal;
+
+import java.lang.instrument.Instrumentation;
+
+import javax.annotation.concurrent.NotThreadSafe;
+
+import org.github.jamm.MemoryMeter;
+import org.junit.Test;
+import org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver;
+
+import de.invesdwin.util.assertions.Assertions;
+import de.invesdwin.util.lang.Reflections;
+import de.invesdwin.util.math.decimal.Decimal;
+
+@NotThreadSafe
+public class MemoryMeasurementTest {
+
+    static {
+        Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
+        final Instrumentation instrumentation = Reflections.method("getInstrumentation")
+                .withReturnType(Instrumentation.class)
+                .in(InstrumentationLoadTimeWeaver.class)
+                .invoke();
+        MemoryMeter.premain(null, instrumentation);
+    }
+
+    @Test
+    public void testDecimalHeapSize() {
+        final Decimal decimal = new Decimal("5");
+        final MemoryMeter meter = new MemoryMeter();
+        final long size = meter.measureDeep(decimal);
+        //CHECKSTYLE:OFF
+        System.out.println("without Digits: " + size);
+        //CHECKSTYLE:ON
+        decimal.getDecimalDigits();
+        final long largerSize = meter.measureDeep(decimal);
+        //CHECKSTYLE:OFF
+        System.out.println("with Digits: " + largerSize);
+        //CHECKSTYLE:ON
+        Assertions.assertThat(largerSize).isGreaterThan(size);
+        decimal.isZero();
+        decimal.isPositive();
+        decimal.getWholeNumberDigits();
+        decimal.getDigits();
+        final long sameSize = meter.measureDeep(decimal);
+        //CHECKSTYLE:OFF
+        System.out.println("with additional info: " + sameSize);
+        //CHECKSTYLE:ON
+        Assertions.assertThat(sameSize).isEqualTo(largerSize);
+
+        Assertions.assertThat(size).isEqualTo(48);
+        Assertions.assertThat(sameSize).isEqualTo(120);
+    }
+
+}
