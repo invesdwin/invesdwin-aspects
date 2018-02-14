@@ -6,10 +6,9 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import org.github.jamm.MemoryMeter;
 import org.junit.Test;
-import org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver;
 
+import de.invesdwin.instrument.DynamicInstrumentationReflections;
 import de.invesdwin.util.assertions.Assertions;
-import de.invesdwin.util.lang.Reflections;
 import de.invesdwin.util.math.decimal.Decimal;
 
 @NotThreadSafe
@@ -17,10 +16,7 @@ public class MemoryMeasurementTest {
 
     static {
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
-        final Instrumentation instrumentation = Reflections.method("getInstrumentation")
-                .withReturnType(Instrumentation.class)
-                .in(InstrumentationLoadTimeWeaver.class)
-                .invoke();
+        final Instrumentation instrumentation = DynamicInstrumentationReflections.getInstrumentation();
         MemoryMeter.premain(null, instrumentation);
     }
 
