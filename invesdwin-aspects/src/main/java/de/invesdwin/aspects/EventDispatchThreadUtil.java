@@ -9,7 +9,7 @@ import java.util.concurrent.FutureTask;
 import javax.annotation.concurrent.Immutable;
 import javax.swing.SwingWorker;
 
-import de.invesdwin.util.concurrent.Futures;
+import de.invesdwin.util.concurrent.future.Futures;
 
 /**
  * InterruptedExceptions are handled here transparently, because in GUI applications these normally shouldn't occur. If
