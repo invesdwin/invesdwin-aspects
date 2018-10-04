@@ -33,7 +33,7 @@ public class MemoryMeasurementTest {
         //CHECKSTYLE:OFF
         System.out.println("with Digits: " + largerSize);
         //CHECKSTYLE:ON
-        Assertions.assertThat(largerSize).isGreaterThan(size);
+        Assertions.assertThat(largerSize).isGreaterThanOrEqualTo(size);
         decimal.isZero();
         decimal.isPositive();
         decimal.getWholeNumberDigits();
@@ -44,8 +44,8 @@ public class MemoryMeasurementTest {
         //CHECKSTYLE:ON
         Assertions.assertThat(sameSize).isEqualTo(largerSize);
 
-        Assertions.assertThat(size).isEqualTo(48);
-        Assertions.assertThat(sameSize).isEqualTo(120);
+        Assertions.assertThat(size).isEqualTo(24);
+        Assertions.assertThat(sameSize).isEqualTo(24);
     }
 
 }
