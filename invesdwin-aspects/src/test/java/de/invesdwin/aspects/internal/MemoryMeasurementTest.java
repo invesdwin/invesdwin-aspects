@@ -46,6 +46,11 @@ public class MemoryMeasurementTest {
 
         Assertions.assertThat(size).isEqualTo(24);
         Assertions.assertThat(sameSize).isEqualTo(24);
+        
+        final Double doublee = new Double(5D);
+        final long doubleSize = meter.measureDeep(doublee);
+        
+        Assertions.assertThat(size).isEqualTo(doubleSize);
     }
 
 }
