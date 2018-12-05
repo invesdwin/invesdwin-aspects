@@ -6,7 +6,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 
-import de.invesdwin.aspects.IConstructorFinishedHook;
+import de.invesdwin.aspects.hook.IConstructorFinishedHook;
 
 @ThreadSafe
 @Aspect

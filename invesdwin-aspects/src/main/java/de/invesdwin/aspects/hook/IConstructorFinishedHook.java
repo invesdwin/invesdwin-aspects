@@ -1,4 +1,4 @@
-package de.invesdwin.aspects;
+package de.invesdwin.aspects.hook;
 
 public interface IConstructorFinishedHook {
 
