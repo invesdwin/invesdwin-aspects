@@ -15,7 +15,7 @@ public class ConstructorFinishedHookAspect {
     public void afterConstructor(final JoinPoint jp) throws Throwable {
         if (jp.getSignature().getDeclaringType().equals(jp.getTarget().getClass())) {
             final IConstructorFinishedHook hook = (IConstructorFinishedHook) jp.getTarget();
-            hook.onConstructorFinished();
+            hook.constructorFinished();
         }
     }
 }
