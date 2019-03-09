@@ -4,6 +4,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import org.junit.Test;
 
+import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.util.assertions.Assertions;
 
 @NotThreadSafe

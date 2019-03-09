@@ -7,6 +7,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 import org.github.jamm.MemoryMeter;
 import org.junit.Test;
 
+import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.instrument.DynamicInstrumentationReflections;
 import de.invesdwin.util.assertions.Assertions;
 import de.invesdwin.util.math.decimal.Decimal;
@@ -44,12 +45,12 @@ public class MemoryMeasurementTest {
         //CHECKSTYLE:ON
         Assertions.assertThat(sameSize).isEqualTo(largerSize);
 
-        Assertions.assertThat(size).isEqualTo(24);
+        Assertions.assertThat(size).isEqualTo(16);
         Assertions.assertThat(sameSize).isEqualTo(24);
-        
+
         final Double doublee = new Double(5D);
         final long doubleSize = meter.measureDeep(doublee);
-        
+
         Assertions.assertThat(size).isEqualTo(doubleSize);
     }
 

@@ -1,4 +1,4 @@
-package de.invesdwin.aspects.internal;
+package de.invesdwin.aspects;
 
 import javax.annotation.concurrent.Immutable;
 

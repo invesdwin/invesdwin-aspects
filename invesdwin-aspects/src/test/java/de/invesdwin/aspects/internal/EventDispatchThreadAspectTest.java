@@ -9,6 +9,7 @@ import javax.annotation.concurrent.ThreadSafe;
 import org.junit.Test;
 import org.springframework.scheduling.annotation.AsyncResult;
 
+import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.aspects.annotation.EventDispatchThread;
 import de.invesdwin.aspects.annotation.EventDispatchThread.InvocationType;
 import de.invesdwin.util.assertions.Assertions;

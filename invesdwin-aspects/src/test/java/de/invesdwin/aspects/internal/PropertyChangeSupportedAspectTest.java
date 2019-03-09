@@ -9,6 +9,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.util.assertions.Assertions;
 import de.invesdwin.util.bean.AValueObject;
 import de.invesdwin.util.lang.Strings;

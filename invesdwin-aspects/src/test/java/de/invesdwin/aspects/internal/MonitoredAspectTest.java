@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.jamonapi.MonitorFactory;
 
+import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.aspects.annotation.Monitored;
 import de.invesdwin.util.assertions.Assertions;
 

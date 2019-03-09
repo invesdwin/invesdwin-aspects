@@ -6,6 +6,7 @@ import org.assertj.core.api.Fail;
 import org.junit.Test;
 import org.springframework.scheduling.annotation.Scheduled;
 
+import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.aspects.annotation.SkipParallelExecution;
 import de.invesdwin.util.assertions.Assertions;
 
