@@ -45,7 +45,7 @@ public class MemoryMeasurementTest {
         //CHECKSTYLE:ON
         Assertions.assertThat(sameSize).isEqualTo(largerSize);
 
-        Assertions.assertThat(size).isEqualTo(16);
+        Assertions.assertThat(size).isEqualTo(24);
         Assertions.assertThat(sameSize).isEqualTo(24);
 
         final Double doublee = new Double(5D);
