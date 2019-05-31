@@ -17,18 +17,23 @@ public class AssertNoSynchronizedScheduledAspectTest {
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
     }
 
+    //wrong exception is currently being thrown by aspectj: https://bugs.eclipse.org/bugs/show_bug.cgi?id=547808
     @Test
     public void testScheduled() throws InterruptedException {
         try {
             new ScheduledTestBean().scheduleSynchronized();
             Fail.fail("Exception expected");
         } catch (final Throwable e) {
-            Assertions.assertThat(e.getMessage()).contains("@" + Scheduled.class.getSimpleName()).contains(
-                    "@" + SkipParallelExecution.class.getSimpleName());
+            //CHECKSTYLE:OFF
+            e.printStackTrace();
+            //CHECKSTYLE:ON
+            Assertions.assertThat(e.getMessage())
+                    .contains("@" + Scheduled.class.getSimpleName())
+                    .contains("@" + SkipParallelExecution.class.getSimpleName());
         }
     }
 
-    private class ScheduledTestBean {
+    public class ScheduledTestBean {
 
         @Scheduled(fixedRate = Long.MAX_VALUE)
         public synchronized void scheduleSynchronized() {}
