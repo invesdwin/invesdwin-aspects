@@ -82,4 +82,10 @@ public final class EventDispatchThreadUtil {
         //CHECKSTYLE:ON
     }
 
+    public static void assertInsideEDT() {
+        if (!EventQueue.isDispatchThread()) {
+            throw new IllegalStateException("This should be called from inside the event dispatch thread!");
+        }
+    }
+
 }
