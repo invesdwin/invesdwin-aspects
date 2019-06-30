@@ -30,7 +30,7 @@
 		<version.invesdwin-maven-plugin>1.0.4</version.invesdwin-maven-plugin>
 
 		<version.invesdwin-util>1.0.0</version.invesdwin-util>
-		<version.invesdwin-instrument>1.0.4-SNAPSHOT</version.invesdwin-instrument>
+		<version.invesdwin-instrument>1.0.4</version.invesdwin-instrument>
 		<version.jamon>2.81</version.jamon>
 	</properties>
 
