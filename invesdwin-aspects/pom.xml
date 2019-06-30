@@ -7,7 +7,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<artifactId>invesdwin-aspects</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<licenses>
@@ -223,7 +223,7 @@
 	<scm>
 		<url>https://github.com/subes/invesdwin-aspects</url>
 		<connection>scm:git:https://github.com/subes/invesdwin-aspects.git</connection>
-		<tag>HEAD</tag>
+		<tag>invesdwin-aspects-1.0.1</tag>
 	</scm>
 
 	<ciManagement>
