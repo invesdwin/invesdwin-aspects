@@ -25,8 +25,8 @@
 		<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
 		<version.maven-processor-plugin>3.3.3</version.maven-processor-plugin>
 
-		<project.version.invesdwin-maven-plugin>1.0.5</project.version.invesdwin-maven-plugin>
-		<project.version.invesdwin-util>1.0.1</project.version.invesdwin-util>
+		<project.version.invesdwin-maven-plugin>1.0.6-SNAPSHOT</project.version.invesdwin-maven-plugin>
+		<project.version.invesdwin-util>1.0.2-SNAPSHOT</project.version.invesdwin-util>
 		<project.version.invesdwin-instrument>1.0.5</project.version.invesdwin-instrument>
 		<version.jamon>2.81</version.jamon>
 	</properties>
