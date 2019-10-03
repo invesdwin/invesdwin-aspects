@@ -55,7 +55,7 @@ public final class EventDispatchThreadUtil {
     }
 
     public static void invokeAndWait(final Runnable runnable) throws InterruptedException {
-        if (EventQueue.isDispatchThread()) {
+        if (isInsideEDT()) {
             runnable.run();
         } else {
             try {
@@ -69,7 +69,7 @@ public final class EventDispatchThreadUtil {
     }
 
     public static void invokeLaterIfNotInEDT(final Runnable runnable) {
-        if (EventQueue.isDispatchThread()) {
+        if (isInsideEDT()) {
             runnable.run();
         } else {
             invokeLater(runnable);
@@ -83,9 +83,13 @@ public final class EventDispatchThreadUtil {
     }
 
     public static void assertInsideEDT() {
-        if (!EventQueue.isDispatchThread()) {
+        if (!isInsideEDT()) {
             throw new IllegalStateException("This should be called from inside the event dispatch thread!");
         }
+    }
+
+    public static boolean isInsideEDT() {
+        return EventQueue.isDispatchThread();
     }
 
 }
