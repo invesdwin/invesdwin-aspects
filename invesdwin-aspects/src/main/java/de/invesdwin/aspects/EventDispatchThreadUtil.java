@@ -10,6 +10,7 @@ import javax.annotation.concurrent.Immutable;
 import javax.swing.SwingWorker;
 
 import de.invesdwin.util.concurrent.future.Futures;
+import io.netty.util.concurrent.FastThreadLocal;
 
 /**
  * InterruptedExceptions are handled here transparently, because in GUI applications these normally shouldn't occur. If
@@ -18,6 +19,16 @@ import de.invesdwin.util.concurrent.future.Futures;
  */
 @Immutable
 public final class EventDispatchThreadUtil {
+
+    /**
+     * threadlocal makes this a lot faster
+     */
+    private static final FastThreadLocal<Boolean> IS_DISPATCH_THREAD = new FastThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() throws Exception {
+            return EventQueue.isDispatchThread();
+        }
+    };
 
     private EventDispatchThreadUtil() {}
 
@@ -95,7 +106,7 @@ public final class EventDispatchThreadUtil {
     }
 
     public static boolean isEventDispatchThread() {
-        return EventQueue.isDispatchThread();
+        return IS_DISPATCH_THREAD.get();
     }
 
 }
