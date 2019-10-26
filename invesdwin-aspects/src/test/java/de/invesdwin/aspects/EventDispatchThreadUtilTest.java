@@ -2,11 +2,14 @@ package de.invesdwin.aspects;
 
 import java.awt.EventQueue;
 
+import javax.annotation.concurrent.NotThreadSafe;
+
 import org.junit.Test;
 
 import de.invesdwin.util.time.Instant;
 import io.netty.util.concurrent.FastThreadLocal;
 
+@NotThreadSafe
 public class EventDispatchThreadUtilTest {
 
     private static final int ITERATIONS = 10000000;
