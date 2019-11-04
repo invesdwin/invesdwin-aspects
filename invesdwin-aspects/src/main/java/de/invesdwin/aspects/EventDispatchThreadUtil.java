@@ -23,7 +23,7 @@ public final class EventDispatchThreadUtil {
     /**
      * threadlocal makes this a lot faster
      */
-    private static final FastThreadLocal<Boolean> IS_DISPATCH_THREAD = new FastThreadLocal<Boolean>() {
+    private static final FastThreadLocal<Boolean> IS_EVENT_DISPATCH_THREAD = new FastThreadLocal<Boolean>() {
         @Override
         protected Boolean initialValue() throws Exception {
             return EventQueue.isDispatchThread();
@@ -106,7 +106,7 @@ public final class EventDispatchThreadUtil {
     }
 
     public static boolean isEventDispatchThread() {
-        return IS_DISPATCH_THREAD.get();
+        return IS_EVENT_DISPATCH_THREAD.get();
     }
 
 }
