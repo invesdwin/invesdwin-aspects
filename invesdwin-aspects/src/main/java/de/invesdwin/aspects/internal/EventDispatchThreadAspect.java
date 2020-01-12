@@ -77,7 +77,11 @@ public class EventDispatchThreadAspect {
             @Override
             public Object get() throws InterruptedException, ExecutionException {
                 final Future<Object> f = (Future<Object>) super.get();
-                return f.get();
+                if (f == null) {
+                    return null;
+                } else {
+                    return f.get();
+                }
             }
         };
     }
