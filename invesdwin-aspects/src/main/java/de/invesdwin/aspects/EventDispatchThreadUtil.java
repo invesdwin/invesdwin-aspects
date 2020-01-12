@@ -26,7 +26,9 @@ public final class EventDispatchThreadUtil {
     private static final FastThreadLocal<Boolean> IS_EVENT_DISPATCH_THREAD = new FastThreadLocal<Boolean>() {
         @Override
         protected Boolean initialValue() throws Exception {
+            //CHECKSTYLE:OFF
             return EventQueue.isDispatchThread();
+            //CHECKSTYLE:ON
         }
     };
 
@@ -38,7 +40,7 @@ public final class EventDispatchThreadUtil {
             return Futures.get(swingWorker);
         } catch (final InterruptedException e) {
             Thread.currentThread().interrupt();
-            return (V) null;
+            return null;
         }
     }
 
