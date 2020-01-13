@@ -16,6 +16,7 @@ import de.invesdwin.aspects.EventDispatchThreadUtil;
 import de.invesdwin.aspects.ProceedingJoinPoints;
 import de.invesdwin.aspects.annotation.EventDispatchThread;
 import de.invesdwin.aspects.annotation.EventDispatchThread.InvocationType;
+import de.invesdwin.norva.marker.SerializableVoid;
 import de.invesdwin.util.error.UnknownArgumentException;
 
 @ThreadSafe
@@ -28,7 +29,8 @@ public class EventDispatchThreadAspect {
         final InvocationType invocationType = annotation.value();
         final Class<?> returnType = ProceedingJoinPoints.getMethod(pjp).getReturnType();
 
-        if (returnType.equals(Void.TYPE) || returnType.equals(Void.class)) {
+        if (returnType.equals(Void.TYPE) || returnType.equals(Void.class)
+                || returnType.equals(SerializableVoid.class)) {
             return handleVoid(pjp, invocationType);
         } else if (Future.class.isAssignableFrom(returnType)) {
             return handleFuture(pjp, invocationType);
