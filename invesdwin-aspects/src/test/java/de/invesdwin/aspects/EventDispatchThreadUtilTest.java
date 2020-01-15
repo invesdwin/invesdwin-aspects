@@ -17,7 +17,9 @@ public class EventDispatchThreadUtilTest {
     private static final FastThreadLocal<Boolean> THREAD_LOCAL = new FastThreadLocal<Boolean>() {
         @Override
         protected Boolean initialValue() throws Exception {
+            //CHECKSTYLE:OFF
             return EventQueue.isDispatchThread();
+            //CHECKSTYLE:ON
         }
     };
 
@@ -38,7 +40,9 @@ public class EventDispatchThreadUtilTest {
     public void testPerformanceDirect() {
         final Instant start = new Instant();
         for (int i = 0; i < ITERATIONS;) {
+            //CHECKSTYLE:OFF
             if (!EventQueue.isDispatchThread()) {
+                //CHECKSTYLE:ON
                 i++;
             }
         }
