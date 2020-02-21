@@ -1,6 +1,7 @@
 package de.invesdwin.aspects.internal;
 
 import java.lang.instrument.Instrumentation;
+import java.util.BitSet;
 
 import javax.annotation.concurrent.NotThreadSafe;
 
@@ -52,6 +53,31 @@ public class MemoryMeasurementTest {
         final long doubleSize = meter.measureDeep(doublee);
 
         Assertions.assertThat(size).isEqualTo(doubleSize);
+    }
+
+    @Test
+    public void testBooleanVsDoubleArraySize() {
+        final int size = 1000000;
+        final boolean[] bool = new boolean[size];
+        final double[] doubl = new double[size];
+        final BitSet bitSet = new BitSet(size);
+        for (int i = 0; i < size; i++) {
+            bool[i] = i % 2 == 0;
+            doubl[i] = i % 2;
+            bitSet.set(i, i % 2 == 0);
+        }
+
+        final MemoryMeter meter = new MemoryMeter();
+        final double boolSize = meter.measureDeep(bool);
+        final double doublSize = meter.measureDeep(doubl);
+        final double bitSetSize = meter.measureDeep(bitSet);
+
+        //CHECKSTYLE:OFF
+        System.out.println("booleanVsDouble: " + boolSize / 10 + " / " + doublSize / 10 + " = " + boolSize / doublSize
+                + " or " + doublSize / boolSize);
+        System.out.println("bitSetVsDouble: " + bitSetSize / 10 + " / " + doublSize / 10 + " = "
+                + bitSetSize / doublSize + " or " + doublSize / bitSetSize);
+        //CHECKSTYLE:ON
     }
 
 }
