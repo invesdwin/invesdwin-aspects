@@ -28,18 +28,19 @@ public class PropertyChangeSupportedAspect {
             final String propertyName = thisJoinPoint.getSignature()
                     .getName()
                     .substring(BeanPathReflections.PROPERTY_SET_METHOD_PREFIX.length());
-            final String propertyNameSmall = propertyName.substring(0, 1).toLowerCase() + propertyName.substring(1);
-            if (target.hasListeners(propertyNameSmall)) {
-                final Object oldValue = getPropertyValue(target, propertyName);
-                thisJoinPoint.proceed();
-                final Object newValue = thisJoinPoint.getArgs()[0];
-                target.firePropertyChange(propertyNameSmall, oldValue, newValue);
-            } else {
-                thisJoinPoint.proceed();
+            if (propertyName.length() > 0 && Character.isUpperCase(propertyName.charAt(0))) {
+                final String propertyNameSmall = propertyName.substring(0, 1).toLowerCase() + propertyName.substring(1);
+                if (target.hasListeners(propertyNameSmall)) {
+                    final Object oldValue = getPropertyValue(target, propertyName);
+                    thisJoinPoint.proceed();
+                    final Object newValue = thisJoinPoint.getArgs()[0];
+                    target.firePropertyChange(propertyNameSmall, oldValue, newValue);
+                    return;
+                }
             }
-        } else {
-            thisJoinPoint.proceed();
         }
+        //fallback
+        thisJoinPoint.proceed();
     }
 
     private Object getPropertyValue(final Object target, final String propertyName) {
