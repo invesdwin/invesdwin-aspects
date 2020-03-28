@@ -25,7 +25,9 @@ public class PropertyChangeSupportedAspect {
     public void setter(final ProceedingJoinPoint thisJoinPoint) throws Throwable {
         final APropertyChangeSupported target = (APropertyChangeSupported) thisJoinPoint.getThis();
         if (target.hasListeners()) {
-            final String propertyName = thisJoinPoint.getSignature().getName().substring("set".length());
+            final String propertyName = thisJoinPoint.getSignature()
+                    .getName()
+                    .substring(BeanPathReflections.PROPERTY_SET_METHOD_PREFIX.length());
             final String propertyNameSmall = propertyName.substring(0, 1).toLowerCase() + propertyName.substring(1);
             if (target.hasListeners(propertyNameSmall)) {
                 final Object oldValue = getPropertyValue(target, propertyName);
