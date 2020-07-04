@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import de.invesdwin.aspects.ProceedingJoinPoints;
 import de.invesdwin.aspects.annotation.SkipParallelExecution;
-import de.invesdwin.util.lang.Reflections;
+import de.invesdwin.util.lang.reflection.Reflections;
 
 @ThreadSafe
 @Aspect

@@ -8,7 +8,7 @@ import javax.annotation.concurrent.Immutable;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
-import de.invesdwin.util.lang.Reflections;
+import de.invesdwin.util.lang.reflection.Reflections;
 
 @Immutable
 public final class ProceedingJoinPoints {
