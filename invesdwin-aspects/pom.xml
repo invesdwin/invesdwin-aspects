@@ -27,7 +27,7 @@
 
 		<project.version.invesdwin-maven-plugin>1.0.9</project.version.invesdwin-maven-plugin>
 		<project.version.invesdwin-util>1.0.4-SNAPSHOT</project.version.invesdwin-util>
-		<project.version.invesdwin-instrument>1.0.9-SNAPSHOT</project.version.invesdwin-instrument>
+		<project.version.invesdwin-instrument>1.0.9</project.version.invesdwin-instrument>
 		<version.jamon>2.81</version.jamon>
 	</properties>
 
