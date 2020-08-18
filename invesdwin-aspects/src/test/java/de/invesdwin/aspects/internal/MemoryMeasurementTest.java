@@ -64,16 +64,24 @@ public class MemoryMeasurementTest {
         final BitSet bitSet = new BitSet(size);
         final RoaringBitmap roaringBitmap = new RoaringBitmap();
         for (int i = 0; i < size; i++) {
-            bool[i] = i % 2 == 0;
+            final boolean value = i % 2 == 0;
+            bool[i] = value;
             doubl[i] = i % 2;
-            bitSet.set(i, i % 2 == 0);
-            roaringBitmap.add(i);
+            if (value) {
+                bitSet.set(i);
+                roaringBitmap.add(i);
+            }
         }
 
         final MemoryMeter meter = new MemoryMeter();
         final double boolSize = meter.measureDeep(bool);
         final double doublSize = meter.measureDeep(doubl);
         final double bitSetSize = meter.measureDeep(bitSet);
+        roaringBitmap.runOptimize();
+        roaringBitmap.trim();
+        for (int i = 0; i < bool.length; i++) {
+            Assertions.assertThat(roaringBitmap.contains(i)).as("i: " + i).isEqualTo(bool[i]);
+        }
         final double roaringBitmapSize = meter.measureDeep(roaringBitmap);
 
         //CHECKSTYLE:OFF
