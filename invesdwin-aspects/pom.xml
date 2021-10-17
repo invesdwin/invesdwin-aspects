@@ -28,7 +28,7 @@
 		<project.version.invesdwin-maven-plugin>1.0.14-SNAPSHOT</project.version.invesdwin-maven-plugin>
 		<project.version.invesdwin-util>1.0.5-SNAPSHOT</project.version.invesdwin-util>
 		<project.version.invesdwin-instrument>1.0.15-SNAPSHOT</project.version.invesdwin-instrument>
-		<version.jamon>2.81</version.jamon>
+		<version.jamon>2.82</version.jamon>
 	</properties>
 
 	<dependencyManagement>
@@ -76,6 +76,10 @@
 				<exclusion>
 					<artifactId>servlet-api</artifactId>
 					<groupId>javax.servlet</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jsp-api</artifactId>
+					<groupId>javax.servlet.jsp</groupId>
 				</exclusion>
 				<exclusion>
 					<artifactId>hazelcast-all</artifactId>
