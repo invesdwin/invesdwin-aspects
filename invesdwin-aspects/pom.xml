@@ -28,7 +28,6 @@
 		<project.version.invesdwin-maven-plugin>1.0.14-SNAPSHOT</project.version.invesdwin-maven-plugin>
 		<project.version.invesdwin-util>1.0.5-SNAPSHOT</project.version.invesdwin-util>
 		<project.version.invesdwin-instrument>1.0.15-SNAPSHOT</project.version.invesdwin-instrument>
-		<version.jamon>2.82</version.jamon>
 	</properties>
 
 	<dependencyManagement>
@@ -63,29 +62,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.jamonapi</groupId>
-			<artifactId>jamon</artifactId>
-			<version>${version.jamon}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>oro</artifactId>
-					<groupId>oro</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>servlet-api</artifactId>
-					<groupId>javax.servlet</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>jsp-api</artifactId>
-					<groupId>javax.servlet.jsp</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>hazelcast-all</artifactId>
-					<groupId>com.hazelcast</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
