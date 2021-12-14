@@ -39,9 +39,6 @@ This aspect handles the `@EventDispatchThread` which allows you to wrap any swin
 
 For all other cases where you want to wrap only parts of methods, you can use the included `EventDispatchThreadUtil` directly. This annotation and util helps not to get exceptions about code already running in EDT. Also it makes code that should run in EDT much cleaner since you spare yourself lots of boiler plate code. 
 
-#### `MonitoredAspect`
-This aspect provides support for a `@Monitored` annotation to do lightweight specific performance measurements in your code using the popular [JAMon](http://jamonapi.sourceforge.net/) library. You could even do service level agreement (SLA) monitoring with this in a lightweight and non code-intrusive fashion. Or just use it for your tests to gather some additional information about your code executions where needed.
-
 #### `ConstructorFinishedHookAspect`
 Ever wanted an interface that works like `@Configurable` in combination with `InitializingBean` from spring which gets invoked after the object has been constructed but without the performance overhead of the dependency injection? Just implement `IConstructorFinishedHook` instead and enjoy it. With this you can initiailize abstract classes *after* the implementing constructor is finished.
 
