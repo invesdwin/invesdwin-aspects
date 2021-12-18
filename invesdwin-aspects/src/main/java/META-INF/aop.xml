@@ -7,7 +7,6 @@
 		<aspect	name="de.invesdwin.aspects.internal.AssertNoSynchronizedScheduledAspect" />
 		<aspect name="de.invesdwin.aspects.internal.SkipParallelExecutionAspect" />
 		<aspect name="de.invesdwin.aspects.internal.EventDispatchThreadAspect" />
-		<aspect name="de.invesdwin.aspects.internal.MonitoredAspect" />
 		<aspect name="de.invesdwin.aspects.internal.ConstructorFinishedHookAspect" />
 	</aspects>
 </aspectj>
