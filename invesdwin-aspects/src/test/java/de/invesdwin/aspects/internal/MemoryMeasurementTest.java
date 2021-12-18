@@ -6,7 +6,7 @@ import java.util.BitSet;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.github.jamm.MemoryMeter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.roaringbitmap.RoaringBitmap;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;

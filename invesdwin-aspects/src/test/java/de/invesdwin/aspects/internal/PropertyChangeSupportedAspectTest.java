@@ -6,7 +6,7 @@ import java.beans.PropertyChangeListener;
 import javax.annotation.concurrent.ThreadSafe;
 
 import org.apache.commons.lang3.mutable.MutableInt;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;

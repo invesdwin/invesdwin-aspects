@@ -3,7 +3,7 @@ package de.invesdwin.aspects.internal;
 import javax.annotation.concurrent.ThreadSafe;
 
 import org.assertj.core.api.Fail;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;
@@ -35,7 +35,8 @@ public class AssertNoSynchronizedScheduledAspectTest {
     public class ScheduledTestBean {
 
         @Scheduled(fixedRate = Long.MAX_VALUE)
-        public synchronized void scheduleSynchronized() {}
+        public synchronized void scheduleSynchronized() {
+        }
 
     }
 

@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.annotation.concurrent.NotThreadSafe;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import de.invesdwin.util.time.Instant;
 import io.netty.util.concurrent.FastThreadLocal;
