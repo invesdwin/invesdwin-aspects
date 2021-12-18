@@ -6,17 +6,18 @@ import java.util.List;
 
 import javax.annotation.concurrent.NotThreadSafe;
 
+import org.burningwave.core.assembler.StaticComponentContainer;
 import org.junit.jupiter.api.Test;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.util.assertions.Assertions;
-import de.invesdwin.util.bean.AValueObject;
 import de.invesdwin.util.bean.IDirtyTrackerListener;
 
 @NotThreadSafe
 public class PropertyChangeSupportedDirtyTrackerTest {
 
     static {
+        StaticComponentContainer.Modules.exportAllToAll();
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
     }
 
@@ -538,65 +539,5 @@ public class PropertyChangeSupportedDirtyTrackerTest {
     }
 
     //TOOD: maybe also test some of the healing mechanisms and those healing mechanisms that are not working
-
-    public static class OuterVo extends AValueObject {
-        private static final long serialVersionUID = 1L;
-        private InnerVO inner = new InnerVO();
-        private Integer otherValue;
-
-        public InnerVO getInner() {
-            return inner;
-        }
-
-        public void setInner(final InnerVO value) {
-            this.inner = value;
-        }
-
-        public Integer getOtherValue() {
-            return otherValue;
-        }
-
-        public void setOtherValue(final Integer otherValue) {
-            this.otherValue = otherValue;
-        }
-
-    }
-
-    public static class InnerVO extends AValueObject {
-        private static final long serialVersionUID = 1L;
-
-        private Integer value;
-        private InnerInnerVO inner = new InnerInnerVO();
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(final Integer value) {
-            this.value = value;
-        }
-
-        public InnerInnerVO getInner() {
-            return inner;
-        }
-
-        public void setInner(final InnerInnerVO inner) {
-            this.inner = inner;
-        }
-    }
-
-    public static class InnerInnerVO extends AValueObject {
-        private static final long serialVersionUID = 1L;
-
-        private String value;
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(final String value) {
-            this.value = value;
-        }
-    }
 
 }

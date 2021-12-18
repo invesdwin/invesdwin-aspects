@@ -95,6 +95,11 @@
 			<artifactId>jamm</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.burningwave</groupId>
+			<artifactId>core</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -129,6 +134,15 @@
 			</testResource>
 		</testResources>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>de/invesdwin/aspects/AspectsTestSuite.java</include>
+					</includes>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.bsc.maven</groupId>
 				<artifactId>maven-processor-plugin</artifactId>

@@ -5,6 +5,7 @@ import java.util.BitSet;
 
 import javax.annotation.concurrent.NotThreadSafe;
 
+import org.burningwave.core.assembler.StaticComponentContainer;
 import org.github.jamm.MemoryMeter;
 import org.junit.jupiter.api.Test;
 import org.roaringbitmap.RoaringBitmap;
@@ -18,6 +19,7 @@ import de.invesdwin.util.math.decimal.Decimal;
 public class MemoryMeasurementTest {
 
     static {
+        StaticComponentContainer.Modules.exportAllToAll();
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
         final Instrumentation instrumentation = DynamicInstrumentationReflections.getInstrumentation();
         MemoryMeter.premain(null, instrumentation);

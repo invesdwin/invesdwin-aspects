@@ -3,6 +3,7 @@ package de.invesdwin.aspects.internal;
 import javax.annotation.concurrent.ThreadSafe;
 
 import org.assertj.core.api.Fail;
+import org.burningwave.core.assembler.StaticComponentContainer;
 import org.junit.jupiter.api.Test;
 import org.springframework.scheduling.annotation.Scheduled;
 
@@ -14,6 +15,7 @@ import de.invesdwin.util.assertions.Assertions;
 public class AssertNoSynchronizedScheduledAspectTest {
 
     static {
+        StaticComponentContainer.Modules.exportAllToAll();
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
     }
 
@@ -30,14 +32,6 @@ public class AssertNoSynchronizedScheduledAspectTest {
                     .contains("@" + Scheduled.class.getSimpleName())
                     .contains("@" + SkipParallelExecution.class.getSimpleName());
         }
-    }
-
-    public class ScheduledTestBean {
-
-        @Scheduled(fixedRate = Long.MAX_VALUE)
-        public synchronized void scheduleSynchronized() {
-        }
-
     }
 
 }

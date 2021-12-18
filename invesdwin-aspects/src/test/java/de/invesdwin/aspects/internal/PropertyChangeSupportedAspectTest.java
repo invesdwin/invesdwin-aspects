@@ -6,12 +6,12 @@ import java.beans.PropertyChangeListener;
 import javax.annotation.concurrent.ThreadSafe;
 
 import org.apache.commons.lang3.mutable.MutableInt;
+import org.burningwave.core.assembler.StaticComponentContainer;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.util.assertions.Assertions;
-import de.invesdwin.util.bean.AValueObject;
 import de.invesdwin.util.lang.Strings;
 
 @ThreadSafe
@@ -20,6 +20,7 @@ public class PropertyChangeSupportedAspectTest {
     private boolean propertyChanged;
 
     static {
+        StaticComponentContainer.Modules.exportAllToAll();
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
     }
 
@@ -92,61 +93,6 @@ public class PropertyChangeSupportedAspectTest {
         vo.setValue(5);
         Mockito.verify(pcl, Mockito.only()).propertyChange((PropertyChangeEvent) Mockito.any());
         Assertions.assertThat(propertyChanged).isTrue();
-    }
-
-    public static class CloneableVO extends AValueObject {
-        private static final long serialVersionUID = 1L;
-
-        private Integer value;
-
-        private MutableInt mutableValue;
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(final Integer value) {
-            this.value = value;
-        }
-
-        public MutableInt getMutableValue() {
-            return mutableValue;
-        }
-
-        public void setMutableValue(final MutableInt mutableValue) {
-            this.mutableValue = mutableValue;
-        }
-
-    }
-
-    public static class CloneableClass implements Cloneable {
-        private CloneableVO value;
-        private Integer otherValue;
-
-        public CloneableVO getValue() {
-            return value;
-        }
-
-        public void setValue(final CloneableVO value) {
-            this.value = value;
-        }
-
-        public Integer getOtherValue() {
-            return otherValue;
-        }
-
-        public void setOtherValue(final Integer otherValue) {
-            this.otherValue = otherValue;
-        }
-
-        @Override
-        public Object clone() {
-            try {
-                return super.clone();
-            } catch (final CloneNotSupportedException e) {
-                throw new RuntimeException(e);
-            }
-        }
     }
 
 }
