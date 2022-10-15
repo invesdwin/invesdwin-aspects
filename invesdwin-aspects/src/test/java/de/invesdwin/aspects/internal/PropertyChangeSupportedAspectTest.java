@@ -12,7 +12,7 @@ import org.mockito.Mockito;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;
 import de.invesdwin.util.assertions.Assertions;
-import de.invesdwin.util.lang.Strings;
+import de.invesdwin.util.lang.string.Strings;
 
 @ThreadSafe
 public class PropertyChangeSupportedAspectTest {
