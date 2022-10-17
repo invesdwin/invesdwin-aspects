@@ -14,7 +14,7 @@ import io.netty.util.concurrent.FastThreadLocal;
 
 /**
  * InterruptedExceptions are handled here transparently, because in GUI applications these normally shouldn't occur. If
- * they do, one can check with Thread.currentThread().isInterrupted() inside loops. 
+ * they do, one can check with Thread.currentThread().isInterrupted() inside loops.
  * 
  */
 @Immutable
