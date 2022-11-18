@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.concurrent.ThreadSafe;
 
-import org.burningwave.core.assembler.StaticComponentContainer;
 import org.junit.jupiter.api.Test;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;
@@ -16,7 +15,6 @@ import de.invesdwin.util.assertions.Assertions;
 public class EventDispatchThreadAspectTest {
 
     static {
-        StaticComponentContainer.Modules.exportAllToAll();
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
     }
 

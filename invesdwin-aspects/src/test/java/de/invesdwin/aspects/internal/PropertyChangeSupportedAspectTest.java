@@ -6,7 +6,6 @@ import java.beans.PropertyChangeListener;
 import javax.annotation.concurrent.ThreadSafe;
 
 import org.apache.commons.lang3.mutable.MutableInt;
-import org.burningwave.core.assembler.StaticComponentContainer;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -20,7 +19,6 @@ public class PropertyChangeSupportedAspectTest {
     private boolean propertyChanged;
 
     static {
-        StaticComponentContainer.Modules.exportAllToAll();
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
     }
 

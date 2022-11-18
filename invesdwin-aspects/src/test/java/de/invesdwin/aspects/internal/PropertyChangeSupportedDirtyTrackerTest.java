@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.annotation.concurrent.NotThreadSafe;
 
-import org.burningwave.core.assembler.StaticComponentContainer;
 import org.junit.jupiter.api.Test;
 
 import de.invesdwin.aspects.InstrumentationTestInitializer;
@@ -17,7 +16,6 @@ import de.invesdwin.util.bean.IDirtyTrackerListener;
 public class PropertyChangeSupportedDirtyTrackerTest {
 
     static {
-        StaticComponentContainer.Modules.exportAllToAll();
         Assertions.assertThat(InstrumentationTestInitializer.INSTANCE).isNotNull();
     }
 
