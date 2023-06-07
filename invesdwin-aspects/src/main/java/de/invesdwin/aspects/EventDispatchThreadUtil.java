@@ -14,7 +14,7 @@ import io.netty.util.concurrent.FastThreadLocal;
 
 /**
  * InterruptedExceptions are handled here transparently, because in GUI applications these normally shouldn't occur. If
- * they do, one can check with Thread.currentThread().isInterrupted() inside loops. 
+ * they do, one can check with Thread.currentThread().isInterrupted() inside loops.
  * 
  */
 @Immutable
@@ -26,7 +26,7 @@ public final class EventDispatchThreadUtil {
     private static final FastThreadLocal<Boolean> IS_EVENT_DISPATCH_THREAD = new FastThreadLocal<Boolean>() {
         @Override
         protected Boolean initialValue() throws Exception {
-            //CHECKSTYLE:OFF
+            //CHECKSTYLE:OFF must only be called by this class anyway
             return EventQueue.isDispatchThread();
             //CHECKSTYLE:ON
         }
