@@ -12,12 +12,12 @@ import org.aspectj.lang.annotation.Aspect;
 
 import com.google.common.util.concurrent.ForwardingFuture.SimpleForwardingFuture;
 
-import de.invesdwin.aspects.EventDispatchThreadUtil;
 import de.invesdwin.aspects.ProceedingJoinPoints;
 import de.invesdwin.aspects.annotation.EventDispatchThread;
 import de.invesdwin.aspects.annotation.EventDispatchThread.InvocationType;
 import de.invesdwin.norva.marker.SerializableVoid;
 import de.invesdwin.util.error.UnknownArgumentException;
+import de.invesdwin.util.swing.EventDispatchThreadUtil;
 
 @ThreadSafe
 @Aspect
