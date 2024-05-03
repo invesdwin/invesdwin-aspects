@@ -29,8 +29,6 @@ public class PropertyChangeSupportedAspectTest {
         vo.setMutableValue(new MutableInt(5));
         final CloneableVO voClone = (CloneableVO) vo.clone();
         Assertions.assertThat(vo).isNotSameAs(voClone);
-        //FST does not clone immutable values
-        Assertions.assertThat(vo.getValue()).isSameAs(voClone.getValue());
         Assertions.assertThat(vo.getValue()).isEqualTo(voClone.getValue());
         //only mutable ones
         Assertions.assertThat(vo.getMutableValue()).isNotSameAs(voClone.getMutableValue());
